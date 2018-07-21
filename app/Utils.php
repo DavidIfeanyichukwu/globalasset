@@ -18,13 +18,13 @@ class Utils
       $black = 0; //This stuff is bad - black
       $print = ""; // Empty
 
-      if( $current->diffInDays($due_at) >= $green ) {
+      if( $current->diffInDays($due_at, false) >= $green ) {
           $print = "green";
-      }else if( $current->diffInDays($due_at) >=  $yellow ) {
+      }else if( $current->diffInDays($due_at, false) >=  $yellow ) {
           $print = "yellow";
-      }else if( $current->diffInDays($due_at) >=  $red ) {
+      }else if( $current->diffInDays($due_at, false) >=  $red ) {
           $print = "red";
-      }else if( $current->diffInDays($due_at) >=  $black ) {
+      }else if( $current->diffInDays($due_at, false) <=  $black ) {
           $print = "black";
       }
 
