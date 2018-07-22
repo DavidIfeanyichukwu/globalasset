@@ -109,7 +109,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
-                                    <tr class="due-at-alert-{{  App\Utils::dueAtDisplayState($data->due_at) }}">
+                                    <tr class="due-at-alert-{{  App\Utils::dueAtDisplayState($data->created_at) }}">
                                         @can('delete',app($dataType->model_name))
                                             <td>
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
