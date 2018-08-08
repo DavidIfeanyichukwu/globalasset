@@ -1,5 +1,25 @@
 @extends('voyager::master')
 
+@section('css')
+    <style>
+        tr.due-at-alert-green td:first-child {
+            border-left: 22px solid green !important;
+        }
+
+        tr.due-at-alert-yellow td:first-child {
+            border-left: 22px solid yellow !important;
+        }
+
+        tr.due-at-alert-red td:first-child {
+            border-left: 22px solid red !important;
+        }
+
+        tr.due-at-alert-black td:first-child {
+            border-left: 22px solid black !important;
+        }
+    </style>
+@stop
+
 @section('page_title', __('voyager::generic.viewing').' '.$dataType->display_name_plural)
 
 @section('page_header')
@@ -89,7 +109,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
-                                    <tr>
+                                    <tr class="due-at-alert-{{  App\Utils::dueAtDisplayState($data->next_due_date) }}">
                                         @can('delete',app($dataType->model_name))
                                             <td>
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
