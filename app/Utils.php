@@ -31,7 +31,7 @@ class Utils
       return  $print;
     
     }else {
-      throw new \Exception("Make sure due_at is setup in DataBase/Bread!");
+      // throw new \Exception("Make sure due_at is setup in DataBase/Bread!");
     }
   }
 
