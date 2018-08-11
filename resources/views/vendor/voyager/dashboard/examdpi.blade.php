@@ -23,7 +23,7 @@
                                 <h4>{{ $data->test_house }}</h4> 
                             </td>
                             <td style="text-align:right">
-                                <a class="btn btn-primary" href="PDF">
+                                <a class="btn btn-primary" href="{{ App\Pdf::dlPdfUrl($data->id) }}">
                                     PDF
                                 </a>
                             </td>
