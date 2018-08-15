@@ -4,26 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Testexammpi as Testexammpi;
+use App\Exammpi as Exammpi;
 use PDF;
 
-class TestexammpiController extends Controller
+class ExammpiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-	public function htmltopdfview(Request $request)
+    public function index() {
+        //
+    }
+    
+    public function htmltopdfview(Request $request)
     {
-             $testexammpi = Testexammpis::all();
+             $Exammpi = Exammpis::all();
        
         if($request->has('download')){
             $pdf = PDF::loadView('htmltopdfview');
             return $pdf->download('htmltopdfview');
+            
+        }
+
+        return view('htmltopdfview');
     }
-		return view('htmltopdfview');
+		
     /**
      * Show the form for creating a new resource.
      *
