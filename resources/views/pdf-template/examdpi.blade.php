@@ -3,7 +3,8 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>{{ $examdpi->test_house }}</title>
+  <title>{{ $examdpi->test_house  }} - Certificate of Test
+                 Examination and DPI {{$examdpi->create_date}} </title>
   <style type="text/css">
     body,
     td,
@@ -86,7 +87,7 @@
       <tr>
         <td bgcolor="#CCCCCC" width="33.3333%">Client</td>
         <td width="33.3333%">&nbsp;</td>
-        <td bgcolor="#CCCCCC" width="33.3333%">{{$examdpi->test_house }}</td>
+        <td bgcolor="#CCCCCC" width="33.3333%">TEST HOUSE</td>
       </tr>
       <tr>
         <td bgcolor="#CCCCCC">

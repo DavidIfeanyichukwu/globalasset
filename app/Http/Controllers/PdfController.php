@@ -20,6 +20,7 @@ class PdfController extends Controller
     public function create($id){
         $examdpi = Examdpi::find($id);
         $pdf = PDF::loadView('pdf-template/Examdpi', compact('examdpi'));
-        return $pdf->download($examdpi->test_house . '.pdf');
+        $name = $examdpi->test_house . 'Certificate of Test Examination and DPI' . $examdpi->create_date;
+        return $pdf->download($name . '.pdf');
     }
 }

@@ -202,12 +202,15 @@
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <span>{{ $data->{$row->field} }}</span>
                                                 @endif
-                                            </td>
+                                                </td>
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
                                             @foreach(Voyager::actions() as $action)
                                                 @include('voyager::bread.partials.actions', ['action' => $action])
                                             @endforeach
+                                                <a style="margin-right:5px" class="btn btn-sm btn-success pull-right edit" href="{{ App\Pdf::dlPdfUrl($data->id) }}">
+                                                    <i class="voyager-file-text"></i> <span class="hidden-xs hidden-sm"> PDF </span>
+                                                </a>
                                         </td>
                                     </tr>
                                     @endforeach
